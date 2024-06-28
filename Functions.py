@@ -13,7 +13,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.ensemble import RandomForestRegressor
 
 from pygam import LinearGAM, s, f # pyGAM package for linear regression GAMs
-# from pyearth import Earth # pyEarth package for running MARS implementation
+from pyearth import Earth # pyEarth package for running MARS implementation
 
 ##############################################################################################################################
 

@@ -174,32 +174,32 @@ for j in range(kf_init):
 
         ### =============================== ### MARS ### =============================== ###
 
-        # # Call MARS model
-        # mars_model = build_mars()
+        # Call MARS model
+        mars_model = build_mars()
 
-        # # Train the model
-        # mars_model.fit(X_train, Y_train) 
+        # Train the model
+        mars_model.fit(X_train, Y_train) 
 
-        # # Define grid for hyperparameter tuning
-        # params_mars = [{'max_degree': [1,2,3]}]
+        # Define grid for hyperparameter tuning
+        params_mars = [{'max_degree': [1,2,3]}]
 
-        # # Refit model using grid searched hyperparameters
-        # gs_mars_model = GridSearchCV(Earth(), params_mars, n_jobs=-1).fit(X_train, Y_train)
+        # Refit model using grid searched hyperparameters
+        gs_mars_model = GridSearchCV(Earth(), params_mars, n_jobs=-1).fit(X_train, Y_train)
 
-        # # Train the optimized model
-        # gs_mars_model.fit(X_train, Y_train)
+        # Train the optimized model
+        gs_mars_model.fit(X_train, Y_train)
 
-        # # Predict the response
-        # y_pred_mars = gs_mars_model.predict(X_test)
+        # Predict the response
+        y_pred_mars = gs_mars_model.predict(X_test)
 
-        # # Convert prediction back to original magnitude
-        # y_mars_inv = np.exp(y_pred_mars).reshape(-1,1)
+        # Convert prediction back to original magnitude
+        y_mars_inv = np.exp(y_pred_mars).reshape(-1,1)
 
-        # # Record error metrics from each fold
-        # r2[i,4] = r_squared(Y_inv, y_mars_inv)
-        # mse[i,4] = mean_squared_err(Y_inv, y_mars_inv)
-        # rmse[i,4] = root_mean_squared_err(Y_inv, y_mars_inv)
-        # mae[i,4] = mean_abs_err(Y_inv, y_mars_inv)
+        # Record error metrics from each fold
+        r2[i,4] = r_squared(Y_inv, y_mars_inv)
+        mse[i,4] = mean_squared_err(Y_inv, y_mars_inv)
+        rmse[i,4] = root_mean_squared_err(Y_inv, y_mars_inv)
+        mae[i,4] = mean_abs_err(Y_inv, y_mars_inv)
 
 
 
